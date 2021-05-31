@@ -20,5 +20,5 @@ ENV SPACK_ROOT=/opt/spack \
     PATH=/opt/spack/bin:$PATH
 
 RUN cd /opt && git clone https://github.com/spack/spack.git && cd spack && git checkout releases/v0.16 && . share/spack/setup-env.sh \
- && spack install openmpi@4.0.2 %gcc@9.3.0 fabrics=psm2,verbs,ofi,mxm,hcoll +pmi \
+ && spack install openmpi@4.0.2 %gcc@9.3.0 fabrics=psm2,verbs,ofi \
  && spack install intel-mkl && spack clean --stage && spack clean -a && spack clean --downloads && spack clean --misc-cache
